@@ -1,16 +1,211 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const features = [
+  {
+    title: 'Meal Planning',
+    description: 'Plan your meals for the week in minutes. Drag and drop recipes to organize your schedule.',
+    color: 'var(--color-breakfast)',
+    icon: 'calendar'
+  },
+  {
+    title: 'Smart Grocery List',
+    description: 'Automatically generate organized grocery lists based on your meal plan. Never forget an item again.',
+    color: 'var(--color-lunch)',
+    icon: 'cart'
+  },
+  {
+    title: 'Nutrition Tracking',
+    description: 'Keep track of your macros and calories effortlessly as you plan and cook your meals.',
+    color: 'var(--color-dinner)',
+    icon: 'chart'
+  },
+];
+
+const stats = [
+  { value: '1M+', label: 'Recipes Planned' },
+  { value: '50k+', label: 'Active Users' },
+  { value: '4.9', label: 'App Store Rating' },
+];
+
+const testimonials = [
+  {
+    quote: "PlanPanda has completely transformed how I eat. I save so much time and money on groceries now.",
+    author: "Sarah J.",
+    role: "Busy Mom"
+  },
+  {
+    quote: "The best meal planner I've used. The interface is beautiful and the recipes are actually delicious.",
+    author: "Mike T.",
+    role: "Fitness Enthusiast"
+  },
+  {
+    quote: "Finally, an app that helps me stick to my diet without making it feel like a chore.",
+    author: "Emily R.",
+    role: "Nutritionist"
+  }
+];
+
+const faqs = [
+  {
+    question: "Is PlanPanda free to use?",
+    answer: "Yes, PlanPanda offers a free tier with essential features. We also have a Premium subscription for advanced analytics and unlimited recipes."
+  },
+  {
+    question: "Can I import my own recipes?",
+    answer: "Absolutely! You can easily import recipes from websites or add your own manually."
+  },
+  {
+    question: "Does it sync across devices?",
+    answer: "Yes, your meal plan and grocery list sync instantly across your iPhone, iPad, and Mac."
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-16 pb-20 sm:pt-24 sm:pb-32 lg:pb-40">
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-4xl font-extrabold tracking-tight text-text sm:text-5xl lg:text-6xl">
+                Meal planning made <span class="text-primary">simple</span> and <span class="text-primary">fun</span>.
+            </h1>
+            <p class="mt-6 text-xl text-gray-600">
+                Join thousands of happy planners who are saving time, eating healthier, and reducing food waste with PlanPanda.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#" class="transition-transform hover:scale-105">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000&h=775d17f405473764d1638d8b35a2c3e9" alt="Download on the App Store" class="h-12" />
+                </a>
+                 <!-- Placeholder for Google Play if needed, using just App Store for iOS app context -->
+            </div>
+        </div>
+        
+        <!-- Mockup Placeholder -->
+        <div class="mt-16 relative">
+            <div class="mx-auto max-w-4xl bg-gray-100 rounded-2xl shadow-2xl overflow-hidden aspect-[16/9] flex items-center justify-center border border-gray-200">
+                <p class="text-gray-400 text-lg font-medium">App Screenshot / Mockup Goes Here</p>
+                <!-- Replace with actual app screenshot -->
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-gray-50 py-12 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            {stats.map((stat) => (
+                <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                    <dt class="text-base leading-7 text-gray-600">{stat.label}</dt>
+                    <dd class="order-first text-3xl font-semibold tracking-tight text-text sm:text-5xl">{stat.value}</dd>
+                </div>
+            ))}
+        </dl>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-base font-semibold leading-7 text-primary">Features</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">Everything you need to master your kitchen</p>
+        </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                {features.map((feature) => (
+                    <div class="flex flex-col items-start">
+                        <div class="rounded-lg p-2 ring-1 ring-inset ring-gray-200 bg-white shadow-sm mb-6">
+                            <div class="h-10 w-10 flex items-center justify-center rounded-md" style={`background-color: ${feature.color}; opacity: 0.2;`}>
+                                <!-- Icon placeholder, using color block for now if icons fail -->
+                            </div>
+                             <!-- Actual icon overlay -->
+                             <div class="h-10 w-10 flex items-center justify-center rounded-md absolute mt-[-48px]" style={`color: ${feature.color}`}>
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <dt class="text-lg font-semibold leading-7 text-text">
+                            {feature.title}
+                        </dt>
+                        <dd class="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                            <p class="flex-auto">{feature.description}</p>
+                        </dd>
+                    </div>
+                ))}
+            </dl>
+        </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-gray-900 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Trusted by home cooks everywhere</h2>
+        </div>
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-300 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-cols-3">
+            {testimonials.map((testimonial) => (
+                <div class="rounded-2xl bg-gray-800 p-6 shadow-lg ring-1 ring-gray-700">
+                    <blockquote class="text-gray-300">
+                        <p>“{testimonial.quote}”</p>
+                    </blockquote>
+                    <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center text-lg font-bold text-white">
+                            {testimonial.author.charAt(0)}
+                        </div>
+                        <div>
+                            <div class="font-semibold text-white">{testimonial.author}</div>
+                            <div class="text-gray-400">{testimonial.role}</div>
+                        </div>
+                    </figcaption>
+                </div>
+            ))}
+        </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl divide-y divide-gray-100">
+            <h2 class="text-2xl font-bold leading-10 tracking-tight text-text">Frequently asked questions</h2>
+            <dl class="mt-10 space-y-6 divide-y divide-gray-100">
+                {faqs.map((faq) => (
+                    <div class="pt-6">
+                        <dt>
+                            <button type="button" class="flex w-full items-start justify-between text-left text-text" aria-controls="faq-0" aria-expanded="false">
+                                <span class="text-base font-semibold leading-7">{faq.question}</span>
+                                <!-- Plus icon could go here -->
+                            </button>
+                        </dt>
+                        <dd class="mt-2 pr-12" id="faq-0">
+                            <p class="text-base leading-7 text-gray-600">{faq.answer}</p>
+                        </dd>
+                    </div>
+                ))}
+            </dl>
+        </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="download" class="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
+    <div class="absolute inset-0 -z-10 overflow-hidden bg-gray-50">
+         <!-- Background decoration could go here -->
+    </div>
+    <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-text sm:text-4xl">Start your journey today.</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
+            Download PlanPanda now and take control of your nutrition.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+             <a href="#" class="transition-transform hover:scale-105">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000&h=775d17f405473764d1638d8b35a2c3e9" alt="Download on the App Store" class="h-14" />
+            </a>
+        </div>
+    </div>
+  </section>
+</Layout>

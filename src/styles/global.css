@@ -1,1 +1,18 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #5328FF;
+  --color-background: #FDFDFD;
+  --color-text: #191918;
+  
+  /* Meal Accents */
+  --color-breakfast: #F57C00;
+  --color-lunch: #9333EA;
+  --color-dinner: #EC4899;
+}
+
+:root {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
