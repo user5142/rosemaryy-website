@@ -3,20 +3,20 @@ import Layout from '../layouts/Layout.astro';
 
 const features = [
   {
-    title: 'Meal Planning',
-    description: 'Plan your meals for the week in minutes. Drag and drop recipes to organize your schedule.',
+    title: 'Recipe Keeper',
+    description: 'Import and save recipes from any website or add your own manually. Never lose a recipe again.',
     color: 'var(--color-breakfast)',
     icon: 'calendar'
   },
   {
-    title: 'Smart Grocery List',
-    description: 'Automatically generate organized grocery lists based on your meal plan. Never forget an item again.',
+    title: 'Meal Planning',
+    description: 'Plan your meals for the week in minutes. Add notes and categorize by meal type.',
     color: 'var(--color-lunch)',
     icon: 'cart'
   },
   {
-    title: 'Nutrition Tracking',
-    description: 'Keep track of your macros and calories effortlessly as you plan and cook your meals.',
+    title: 'Grocery Lists',
+    description: 'Generate organized grocery lists based on your meal plan. Never forget an item again.',
     color: 'var(--color-dinner)',
     icon: 'chart'
   },
@@ -49,15 +49,11 @@ const testimonials = [
 const faqs = [
   {
     question: "Is PlanPanda free to use?",
-    answer: "Yes, PlanPanda offers a free tier with essential features. We also have a Premium subscription for advanced analytics and unlimited recipes."
+    answer: "Yes, PlanPanda offers a free tier with essential features. We also have a Pro subscription for unlimited recipes and shared household accounts."
   },
   {
     question: "Can I import my own recipes?",
     answer: "Absolutely! You can easily import recipes from websites or add your own manually."
-  },
-  {
-    question: "Does it sync across devices?",
-    answer: "Yes, your meal plan and grocery list sync instantly across your iPhone, iPad, and Mac."
   }
 ];
 ---
@@ -113,7 +109,7 @@ const faqs = [
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-base font-semibold leading-7 text-primary">Features</h2>
-            <p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">Everything you need to master your kitchen</p>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-text sm:text-4xl">Everything you need to level up your home cooking</p>
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
@@ -143,7 +139,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials 
   <section class="bg-gray-900 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
@@ -168,7 +164,7 @@ const faqs = [
             ))}
         </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- FAQ -->
   <section class="py-24 sm:py-32">
