@@ -6,9 +6,19 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
     description?: string;
+    ogImage?: string;
 }
 
-const { title, description = "The ultimate meal planner for your healthy lifestyle." } = Astro.props;
+const { title, description = "The ultimate meal planner for your healthy lifestyle.", ogImage } = Astro.props;
+
+// Default OG image if none provided
+const defaultOgImage = "/images/og-image.png";
+const ogImageUrl = ogImage || defaultOgImage;
+
+// Construct absolute URL for OG image
+const siteUrl = Astro.url.origin;
+const absoluteOgImageUrl = ogImageUrl.startsWith('http') ? ogImageUrl : `${siteUrl}${ogImageUrl}`;
+const absolutePageUrl = Astro.url.href;
 ---
 
 <!doctype html>
@@ -20,6 +30,19 @@ const { title, description = "The ultimate meal planner for your healthy lifesty
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>PlanPanda - {title}</title>
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={absolutePageUrl} />
+        <meta property="og:title" content={`PlanPanda - ${title}`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={absoluteOgImageUrl} />
+        
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`PlanPanda - ${title}`} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={absoluteOgImageUrl} />
         
         <!-- Inter Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
