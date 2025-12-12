@@ -19,10 +19,33 @@ const lastUpdated = "November 30, 2025";
         <p class="mt-6">
           PlanPanda is designed with privacy at its core. Your meal plans, grocery lists and personal content are stored securely in our secure cloud database. We use strong encryption in transit (HTTPS) and at rest to protect your data.
         </p>
+
+        <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">User Authentication</h3>
+        <p class="mt-4">
+          PlanPanda requires user authentication to provide a personalized experience, securely store user preferences, sync meal plans, recipes, and grocery lists across devices, and manage household-sharing functionality. Authentication also allows us to correctly associate subscription entitlements with each user account.
+        </p>
+        <p class="mt-4">
+          Our app offers multiple authentication options, including <strong>Sign In with Apple</strong>. We include Sign In with Apple to comply with Apple's requirement for apps that support third-party login. Sign In with Apple provides strong privacy protections and a seamless login flow for users on Apple devices.
+        </p>
+        <p class="mt-4">
+          When you use Sign In with Apple, Apple may provide us with:
+        </p>
+        <ul role="list" class="mt-4 max-w-xl space-y-2 list-disc pl-5">
+          <li>Your Apple ID email address (or a private relay email if you choose to hide your email)</li>
+          <li>Your name (if you choose to share it)</li>
+          <li>A unique identifier to associate your account with your Apple ID</li>
+        </ul>
+        <p class="mt-4">
+          We use this information solely for authentication and account management purposes. Sign In with Apple allows you to use a private relay email address, which helps protect your privacy. We do not receive your actual Apple ID email address when you choose to hide your email.
+        </p>
+        <p class="mt-4">
+          There is no guest mode available in the app. All users must sign in to access the app's features and functionality.
+        </p>
+
         <p class="mt-6">
           We collect and store the following types of data:
         </p>
-        <ul role="list" class="mt-8 max-w-xl space-y-2 list-disc pl-5">
+        <ul role="list" class="mt-4 max-w-xl space-y-2 list-disc pl-5">
           <li>Account information (email, password, profile details)</li>
           <li>Meal plans, recipes, and grocery lists</li>
           <li>Dietary preferences</li>
@@ -82,9 +105,13 @@ const lastUpdated = "November 30, 2025";
         </p>
         <ul role="list" class="mt-4 max-w-xl space-y-2 list-disc pl-5">
           <li>Supabase (data storage, authentication)</li>
+          <li>Sign In with Apple (authentication service provided by Apple)</li>
           <li>Apple App Store (subscription processing)</li>
           <li>Superwall (paywall presentation and subscription flow)</li>
         </ul>
+        <p class="mt-6">
+          When you use Sign In with Apple, your authentication is handled by Apple in accordance with Apple's Privacy Policy. Apple processes your authentication data to provide the Sign In with Apple service. We only receive the information you choose to share through Sign In with Apple (such as your email address or private relay email, and optionally your name).
+        </p>
         <p class="mt-6">
           These services may process data solely to provide their features. No third-party receives your personal data for advertising.
         </p>
