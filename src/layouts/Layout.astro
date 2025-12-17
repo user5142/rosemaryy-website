@@ -16,7 +16,8 @@ const defaultOgImage = "/images/og-image.png";
 const ogImageUrl = ogImage || defaultOgImage;
 
 // Construct absolute URL for OG image
-const siteUrl = Astro.url.origin;
+// Use import.meta.env.SITE for production builds, fall back to Astro.url.origin for dev
+const siteUrl = import.meta.env.SITE || Astro.url.origin;
 const absoluteOgImageUrl = ogImageUrl.startsWith('http') ? ogImageUrl : `${siteUrl}${ogImageUrl}`;
 const absolutePageUrl = Astro.url.href;
 ---
