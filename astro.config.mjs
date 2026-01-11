@@ -9,6 +9,7 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://rosemaryyapp.com',
   vite: {
+    // @ts-expect-error - Vite plugin type mismatch between root and Astro's nested Vite dependency
     plugins: [tailwindcss()]
   },
 
